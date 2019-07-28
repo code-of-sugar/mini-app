@@ -1,0 +1,31 @@
+= render 'layouts/side-bar'
+
+.wrapper#user
+  .maincontents.user-post
+    .user-post__imgfield
+      =image_tag(@post.image.url, class:"img-resize", id:"user-show")
+      
+      -if user_signed_in? && @post.user_id == current_user.id
+        .post-edit
+          =link_to edit_post_path(@post), class: "post-link" do
+            編集する
+
+          =link_to post_path(@post), method: :delete, class: "post-link" do
+            削除する
+    
+    .inner-contents
+      .inner-contents__imginfo
+        .inner-contents__imginfo--title
+          タイトル:
+          = @post.title
+        .inner-contents__imginfo--caption
+          投稿者:
+          = @post.user.name
+          %p
+          = @post.caption
+      .inner-contents__comment-box
+        =render 'layouts/comment'
+        .inner-contents__comment-box--input-comment
+          = form_for [@post,@comment] do |f|
+            = f.text_field :comment, class:"comment-area"
+            = f.submit "コメントを投稿する", class:"submit"

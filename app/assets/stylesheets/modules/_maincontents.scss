@@ -1,0 +1,42 @@
+.wrapper{
+  position: absolute;
+  top: 150px;
+  width: 100%;
+
+  .contents{
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 30px;
+    height: 100%;
+    flex-wrap: wrap;
+    justify-content: start;
+
+    &__post-box{
+      margin: 50px 20px 10px 20px;
+      height: 250px;
+      width: 200px;
+      border-radius: 10px;
+      border: solid 3px #eeeeee;
+
+      &--image{
+        height: 200px;
+        border-bottom: solid 3px #eeeeee;
+        object-fit: contain;
+
+        .img-resize{
+          height: 200px;
+          width: 200px;
+          overflow: hidden;
+          object-fit: contain;  
+        }
+      }
+
+      &--title{
+        text-align: center;
+      }
+      
+    }
+  }
+}

@@ -1,0 +1,31 @@
+.header
+  .header__title-logo
+    =link_to root_path,style:"text-decoration:none; color: white;" do
+      CarDs
+  .header__right-contents
+    %form{method: "post", action: "http://localhost:3000/", class: "header__right-contents--form"}
+      %input{type: "search", placeholder: "検索", class: "header__right-contents--input"}
+    .header__right-contents--login-btn
+      - unless user_signed_in?
+        =link_to new_user_session_path do
+          %input{type: "button", value: "Login"}
+      - else
+        .header__right-contents--logout-btn
+          =link_to destroy_user_session_path, method: :delete do
+            %input{type: "button", value: "Logout"}
+
+-if user_signed_in?
+  .userinfo
+    .userinfo__profile
+      .userinfo__profile--nickname
+        = current_user.name
+      .userinfo__profile--user-edit
+        =link_to edit_user_path(current_user.id), class: "edit-link" do
+          編集
+
+    .userinfo__post
+      =link_to users_path, class: "post-link" do
+        投稿一覧
+
+      =link_to new_post_path, class: "post-link" do
+        投稿する

@@ -1,0 +1,9 @@
+- @post.comments.each do |comment|
+  .comment
+    .comment__upper-info
+      .comment__upper-info--user
+        = comment.user.name
+      .comment__upper-info--timestanp
+        = comment.created_at
+    .comment__text
+      = comment.comment

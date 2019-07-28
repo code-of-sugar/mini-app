@@ -1,0 +1,31 @@
+.comment{
+  padding-left: 5px;
+  margin-bottom: 5px;
+  min-height: 80px;
+  border : solid 1px #cfcece;
+  border-radius: 0 0 5px 5px;
+  background-color: #eeeeee;
+
+  &__upper-info{
+    display: flex;
+
+    &--user{
+      height: 20px;
+      width: 65%;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    &--timestanp{
+      height: 20px;
+      width:35%;
+      font-size: 13px;
+      color: #888888;
+    }
+  }
+
+  &__text{
+    margin-top: 4px;
+    border-top: solid 1px #cfcece;
+  }
+}

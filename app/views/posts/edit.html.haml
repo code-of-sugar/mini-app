@@ -1,0 +1,8 @@
+= render 'layouts/side-bar'
+.wrapper.newproduct
+  .contents.formfield
+    = form_for @post do |f|
+      = f.label '編集', id: "text"
+      = f.text_field :title, class:"formfield__input-title", placeholder:"タイトル"
+      = f.text_area :caption, class:"formfield__input-caption", placeholder:"キャプション"
+      = f.submit "更新する", class:"formfield__submit"

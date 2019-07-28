@@ -1,0 +1,10 @@
+.wrapper
+  .contents
+    - @posts.each do |post|
+      =link_to post_path(post),style: "text-decoration:none; color: black;" do
+        .contents__post-box
+          .contents__post-box--image
+            = image_tag(post.image.url, class:"img-resize")
+          .contents__post-box--title
+            = post.title
+    = paginate @posts

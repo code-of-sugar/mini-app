@@ -1,0 +1,35 @@
+.newproduct{
+  height: calc(100% - 150px);
+
+  #text{
+    font-size: 30px;
+    font-weight: bold;
+  }
+}
+
+
+.formfield{
+  background-color: white;
+  height: 100%;
+  width: 100%;
+
+  form{
+    margin: auto;
+    display: block;
+    width: 395px;
+  }
+
+  &__input-image{
+    background-color: aqua;
+    height: 200px;
+  }
+
+  &__input-title{
+    width: 395px;
+  }
+
+  &__input-caption{
+    width: 395px;
+    height: 100px;
+  }
+}

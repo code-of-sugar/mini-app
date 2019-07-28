@@ -1,0 +1,15 @@
+= render 'layouts/side-bar'
+.wrapper.newproduct
+  .contents.formfield
+    = form_for @post do |f|
+      = f.label 'ファイルを選択', id: "text"
+      #img_field{onclick: "$('#file').click()"}
+        - if @post.image.present?
+          = image_tag(@post.image)
+        - else
+          %i.fas.fa-image
+          %i.fas.fa-file-upload.add
+      = f.file_field :image, class:"formfield__input-image", style:"display:none", id: "file"
+      = f.text_field :title, class:"formfield__input-title", placeholder:"タイトル"
+      = f.text_area :caption, class:"formfield__input-caption", placeholder:"キャプション"
+      = f.submit "投稿する", class:"formfield__submit"
